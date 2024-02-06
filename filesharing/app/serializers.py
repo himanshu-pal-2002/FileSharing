@@ -10,3 +10,10 @@ class FileListSerializer(serializers.Serializer):
     def create(self, validate_data):
 
         folder = Folder.objects.create()
+        files = validate_data.pop('files')
+        files_obj = []
+        for file in files:
+            files_obj = Files.objects.create(folder = folder, file = file)
+            files_obj.append(files_obj)
+        
+        return files_obj
