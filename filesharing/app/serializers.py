@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import *
 import shutil
 
+# Views for File List View:
 class FileListSerializer(serializers.Serializer):
 
     files = serializers.ListField(
@@ -13,7 +14,7 @@ class FileListSerializer(serializers.Serializer):
         shutil.make_archive(f'public/static/zip/{folder}' , 'zip',f'public/static/{folder}')
 
 
-
+# Function for create:
     def create(self, validate_data):
 
         folder = Folder.objects.create()
