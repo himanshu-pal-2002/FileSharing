@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.views import Response
 from .serializers import *
 
-
+# Views for File Handle Upload:
 class FileHandleUpload(APIView):
 
     def post(self, request):
